@@ -16,7 +16,7 @@ Meanwhile, you can try it in the Chrome developer mode:
 - Click on the "Load unpacked extension" button
 - Select the folder of this repository
 
-### How to use
+### How to use
 Before a Criptalia project opens, when there is the countdown, you will see, under the countdown itself, an option to enable auto-investment. Just enable the option, set the amount you want to invest, and don't touch anything else before the project opens. As soon as the countdown ends, your investment will immediately be placed.
 
 ### Security
