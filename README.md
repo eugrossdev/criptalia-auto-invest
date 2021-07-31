@@ -6,7 +6,7 @@ Tired of loosing the opportunity to invest on Criptalia projects because they cl
 ### DISCLAIMER
 This project is not affiliated to or endorsed by Criptalia in any way, I made this for my personal use and I'm sharing it to help other users. I take no responsibility if something goes wrong.
 
-### How to install
+### How to install
 The extension is pending validation for the Chrome Web Store, and will be eventually available as an official extension.
 
 Meanwhile, you can try it in the Chrome developer mode:
