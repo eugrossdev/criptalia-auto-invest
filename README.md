@@ -7,14 +7,7 @@ Tired of loosing the opportunity to invest on Criptalia projects because they cl
 This project is not affiliated to or endorsed by Criptalia in any way, I made this for my personal use and I'm sharing it to help other users. I take no responsibility if something goes wrong.
 
 ### How to install
-The extension is pending validation for the Chrome Web Store, and will be eventually available as an official extension.
-
-Meanwhile, you can try it in the Chrome developer mode:
-- Clone this repository or download it and extract it to a folder
-- Open Google Chrome and navigate to `chrome://extensions`
-- Select the "Developer mode" in the upper right corner
-- Click on the "Load unpacked extension" button
-- Select the folder of this repository
+The extension is available [on the Chrome Web Store](https://chrome.google.com/webstore/detail/criptalia-auto-invest/fhoamnefegdnojjbfnkdiaifidaghabi), and you can easily enable it from there.
 
 ### How to use
 Before a Criptalia project opens, when there is the countdown, you will see, under the countdown itself, an option to enable auto-investment. Just enable the option, set the amount you want to invest, and don't touch anything else before the project opens. As soon as the countdown ends, your investment will immediately be placed.
