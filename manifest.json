@@ -8,11 +8,11 @@
         "48": "icons/48.png",
        "128": "icons/128.png"
     },
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Eugross",
     "content_scripts": [
         {
-            "matches": ["https://*.criptalia.com/*"],
+            "matches": ["https://evenfi.com/*", "https://*.evenfi.com/*"],
             "js": ["libs/popper.min.js", "libs/tippy-bundle.umd.min.js", "js/invest.js"],
             "run_at": "document_idle"
         }
