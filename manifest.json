@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Criptalia Auto Invest",
+    "name": "EvenFi Auto Invest",
     "description": "Automatically invest on Criptalia projects when they open.",
     "icons": {
         "16": "icons/16.png",
