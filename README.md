@@ -1,16 +1,16 @@
-# criptalia-auto-invest
-## Automatically invest on Criptalia projects when they open.
+# evenfi-auto-invest
+## Automatically invest on EvenFi (ex Criptalia) projects when they open.
 
-Tired of loosing the opportunity to invest on Criptalia projects because they close too fast? This extension allows you to set your amount while the countdown is still running, and place your investment right when the project opens.
+Tired of loosing the opportunity to invest on EvenFi (ex Criptalia) projects because they close too fast? This extension allows you to set your amount while the countdown is still running, and place your investment right when the project opens.
 
 ### DISCLAIMER
-This project is not affiliated to or endorsed by Criptalia in any way, I made this for my personal use and I'm sharing it to help other users. I take no responsibility if something goes wrong.
+This project is not affiliated to or endorsed by EvenFi/Criptalia in any way, I made this for my personal use and I'm sharing it to help other users. I take no responsibility if something goes wrong.
 
 ### How to install
 The extension is available [on the Chrome Web Store](https://chrome.google.com/webstore/detail/criptalia-auto-invest/fhoamnefegdnojjbfnkdiaifidaghabi), and you can easily enable it from there.
 
 ### How to use
-Before a Criptalia project opens, when there is the countdown, you will see, under the countdown itself, an option to enable auto-investment. Just enable the option, set the amount you want to invest, and don't touch anything else before the project opens. As soon as the countdown ends, your investment will immediately be placed.
+Before a EvenFi project opens, when there is the countdown, you will see, under the countdown itself, an option to enable auto-investment. Just enable the option, set the amount you want to invest, and don't touch anything else before the project opens. As soon as the countdown ends, your investment will immediately be placed.
 
 ### Security
 This is a custom browser extension that interacts with the Criptalia web pages. Therefore, it could possibily do anything, including undesired action. I could tell you that it does nothing bad, but you should not take my word for it. Here are some suggestion to verify it yourself:
