@@ -10,19 +10,19 @@ function parseDecimalValue(val) {
 
 var observeDOM = (function(){
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-  
+
     return function( obj, callback ){
-      if( !obj || obj.nodeType !== 1 ) return; 
-  
+      if( !obj || obj.nodeType !== 1 ) return;
+
       if( MutationObserver ){
         // define a new observer
         var mutationObserver = new MutationObserver(callback)
-  
+
         // have the observer observe foo for changes in children
         mutationObserver.observe( obj, { childList:true, subtree:true })
         return mutationObserver
       }
-      
+
       // browser support fallback
       else if( window.addEventListener ){
         obj.addEventListener('DOMNodeInserted', callback, false)
@@ -33,26 +33,31 @@ var observeDOM = (function(){
 
 var oldHtml = ""
 function updateAutoInvestDiv(investBox) {
-  var autoInvestDiv = investBox.querySelector('.eugruss-auto-invest');
-  subLabel = investBox.querySelector('.sub-label');
-  if(subLabel) {
+  var clockFound = false;
+  investBox.querySelectorAll('img').forEach((el) => {
+     if(el.getAttribute('src').indexOf('clock') >= 0) {
+         clockFound = true;
+     }
+  });
+  var autoInvestDiv = investBox.querySelector('.eugross-auto-invest');
+  if(clockFound) {
     if(!autoInvestDiv) {
-      investBox.insertAdjacentHTML('beforeend', '<div class="eugruss-auto-invest"></div>');
-      autoInvestDiv = investBox.querySelector('.eugruss-auto-invest');
+      investBox.insertAdjacentHTML('beforeend', '<div class="eugross-auto-invest"></div>');
+      autoInvestDiv = investBox.querySelector('.eugross-auto-invest');
     }
-    
+
     if(autoInvestAmount != "") {
       innerHTML = `<div style="margin-top: 20px;">
         <h5>Automatic investment enabled</h5>
         <p>When the project opens, you will automatically invest <strong>${autoInvestAmount} €</strong>.</p>
         <p><strong>Please stay on this page and don't touch anything until the project opens, or the auto-invest feature will be disabled!</strong></p>
         <p>You'll also need to manually verify that you have enough funds and that your value meets the minimum and maximum investment for the project, or the auto-invest will fail.</p>
-        <span><a href="#" onClick="return false" class="eugross-auto-invest-disable-link">Click here</a> to disable automatic investment.</span>
+        <span><a href="#" onClick="return false" class="eugross-auto-invest-disable-link">Click here to disable automatic investment.</a></span>
       </div>`
     } else {
       innerHTML = `<div style="margin-top: 20px;">
         <h5>Automatic investment disabled</h5>
-        <span><a href="#" onClick="return false" class="eugross-auto-invest-enable-link">Click here</a> to enable automatic investment as soon as the project opens.</span>
+        <span><a href="#" onClick="return false" class="eugross-auto-invest-enable-link">Click here to enable automatic investment as soon as the project opens.</a></span>
       </div>`
     }
 
@@ -87,7 +92,7 @@ function updateAutoInvestDiv(investBox) {
           updateAutoInvestDiv(investBox);
         });
       }
-    } 
+    }
   } else {
     if(autoInvestDiv) {
       autoInvestDiv.remove();
@@ -96,7 +101,7 @@ function updateAutoInvestDiv(investBox) {
 }
 
 function onInvestBoxChange(investBox) {
-    updateAutoInvestDiv(investBox);
+    window.setTimeout(() => updateAutoInvestDiv(investBox), 100)
     investForm = investBox.querySelector('input[name="invested"]');
     if(!investForm) return;
     if(investForm.disabled) return;
@@ -113,7 +118,7 @@ function onInvestBoxChange(investBox) {
       bubbles: true,
       cancelable: true,
   });
-  
+
   investForm.dispatchEvent(event);
 
   investButton = investBox.querySelector('button[type="submit"]');
@@ -128,8 +133,9 @@ function awaitInvestBox() {
     }
     investBox = document.querySelector('.investbox');
     if(investBox) {
-        updateAutoInvestDiv(investBox);
-        observeDOM(investBox, function() { onInvestBoxChange(investBox) });        
+        oldHtml = ""
+        window.setTimeout(() => updateAutoInvestDiv(investBox), 100)
+        observeDOM(investBox, function() { onInvestBoxChange(investBox) });
     } else {
         window.setTimeout(awaitInvestBox, 100);
     }
